@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Deluxe Room",
+    "pricePerNight": 150,
+    "roomSize": "400 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/XLFPy0T/Adaaran-Club-Rannalhi-Accomodation-Standard.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Standard Room",
+    "pricePerNight": 100,
+    "roomSize": "300 sqft",
+    "availability": "unavailable",
+    "images": "https://i.ibb.co/68rDvNX/bdec7e1b212cab6e7930daa142387f62.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Executive Suite",
+    "pricePerNight": 250,
+    "roomSize": "600 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/6Z818qf/Standard-room-double-4.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Family Suite",
+    "pricePerNight": 300,
+    "roomSize": "800 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/yB7w9YD/lovepik-five-star-deluxe-suite-picture-501207428.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Penthouse",
+    "pricePerNight": 500,
+    "roomSize": "1000 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/ChqpVnN/uperior-king-room-1-wide.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Budget Room",
+    "pricePerNight": 80,
+    "roomSize": "250 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/sjwY5JL/industrial-bedroom-at2ekq.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Studio Apartment",
+    "pricePerNight": 200,
+    "roomSize": "500 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/ZcJ3szq/standard-room.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Beachfront Villa",
+    "pricePerNight": 700,
+    "roomSize": "1500 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/d70d5Qh/pngtree-photos-of-the-hotel-standard-room-in-the-afternoon-without-photographs-image-856485.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Honeymoon Suite",
+    "pricePerNight": 400,
+    "roomSize": "700 sqft",
+    "availability": "unavailable",
+    "images": "https://i.ibb.co/Xb6DMYt/bedroom-1330846-640.jpg",
+    "specialOffers": "No Offer"
+  },
+  {
+    "name": "Mountain View Chalet",
+    "pricePerNight": 350,
+    "roomSize": "900 sqft",
+    "availability": "available",
+    "images": "https://i.ibb.co/zH37WC2/pexels-pixabay-271618-1.jpg",
+    "specialOffers": "No Offer"
+  }
+]
