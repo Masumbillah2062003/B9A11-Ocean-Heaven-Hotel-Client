@@ -28,16 +28,18 @@ const Navbar = () => {
       >
         Rooms
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#FA4612] lg:border-b-2 underline-offset-2 border-[#FA4612] text-lg font-semibold"
-            : "font-semibold text-lg"
-        }
-        to="/mybookings"
-      >
-        My Bookings
-      </NavLink>
+      {user && (
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#FA4612] lg:border-b-2 underline-offset-2 border-[#FA4612] text-lg font-semibold"
+              : "font-semibold text-lg"
+          }
+          to="/mybookings"
+        >
+          My Bookings
+        </NavLink>
+      )}
       <NavLink
         className={({ isActive }) =>
           isActive
@@ -122,7 +124,10 @@ const Navbar = () => {
               <li>{user?.displayName}</li>
               <li>{user?.email}</li>
               <li>
-                <button onClick={handlerLogout} className="btn text-[white] font-semibold hover:border-[#FA4612] bg-[#FA4612] hover:bg-transparent hover:text-[#FA4612]">
+                <button
+                  onClick={handlerLogout}
+                  className="btn text-[white] font-semibold hover:border-[#FA4612] bg-[#FA4612] hover:bg-transparent hover:text-[#FA4612]"
+                >
                   Logout
                 </button>
               </li>
@@ -132,14 +137,22 @@ const Navbar = () => {
           <div>
             <NavLink
               to="/signin"
-              className={({isActive}) => isActive ? "btn font-bold bg-transparent hover:bg-[#fa441230] text-[#FA4612] border-none" : "btn font-bold bg-transparent hover:bg-[#fa441230] text-[black] border-none" }
+              className={({ isActive }) =>
+                isActive
+                  ? "btn font-bold bg-transparent hover:bg-[#fa441230] text-[#FA4612] border-none"
+                  : "btn font-bold bg-transparent hover:bg-[#fa441230] text-[black] border-none"
+              }
             >
               <IoPersonAddOutline /> Sign In
             </NavLink>
             <span className="font-bold text-lg text-[#FA4612]">|</span>
             <NavLink
               to="/signup"
-              className={({isActive}) => isActive ? "btn font-bold bg-transparent hover:bg-[#fa441230] text-[#FA4612] border-none" : "btn font-bold bg-transparent hover:bg-[#fa441230] text-[black] border-none" }
+              className={({ isActive }) =>
+                isActive
+                  ? "btn font-bold bg-transparent hover:bg-[#fa441230] text-[#FA4612] border-none"
+                  : "btn font-bold bg-transparent hover:bg-[#fa441230] text-[black] border-none"
+              }
             >
               Sign Up
             </NavLink>
