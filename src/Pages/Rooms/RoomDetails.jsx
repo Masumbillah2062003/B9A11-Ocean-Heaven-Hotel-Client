@@ -183,7 +183,7 @@ const RoomDetails = () => {
           </div>
         </div>
       </div>
-      {/* <div className="mt-10">
+      <div className="mt-10">
         <h1 className="lg:text-5xl text-3xl lg:mt-12  font-bold text-[#FA4612] text-center">
           Review
         </h1>
@@ -192,7 +192,7 @@ const RoomDetails = () => {
             <Rating key={rate._id} rate={rate}></Rating>
           ))}
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
