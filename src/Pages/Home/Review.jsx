@@ -34,7 +34,8 @@ const Review = () => {
       <div>
         <h2
           className="lg:text-5xl text-3xl mt-6 lg:mt-16  font-bold text-[#FA4612] text-center"
-          data-aos="fade-down" data-aos-duration="1000"
+          data-aos="fade-down"
+          data-aos-duration="1000"
           data-aos-easing="ease-in-out"
         >
           User Reviews

@@ -32,17 +32,17 @@ const Banner = () => {
       >
         <SwiperSlide>
           <figure>
-            <img src={room1} alt="" className="w-full h-full"/>
-          </figure>
-        </SwiperSlide>
-        <SwiperSlide >
-          <figure >
-            <img src={room2} alt="" className="w-full h-full"/>
+            <img src={room1} alt="" className="w-full h-full" />
           </figure>
         </SwiperSlide>
         <SwiperSlide>
           <figure>
-            <img src={room3} alt="" className="w-full h-full"/>
+            <img src={room2} alt="" className="w-full h-full" />
+          </figure>
+        </SwiperSlide>
+        <SwiperSlide>
+          <figure>
+            <img src={room3} alt="" className="w-full h-full" />
           </figure>
         </SwiperSlide>
       </Swiper>

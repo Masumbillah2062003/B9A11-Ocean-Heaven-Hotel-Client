@@ -35,7 +35,9 @@ const Home = () => {
                   <div className="carousel w-full">
                     <div id="item1" className="carousel-item w-full flex-col">
                       <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                        <h3 className="lg:text-3xl text-xl font-semibold">Executive Suite</h3>
+                        <h3 className="lg:text-3xl text-xl font-semibold">
+                          Executive Suite
+                        </h3>
                       </div>
                       <div className="relative">
                         <img src={bed} className="w-full" />
@@ -51,9 +53,15 @@ const Home = () => {
                         />
                       </div>
                     </div>
-                    <div id="item2" className="carousel-item w-full flex-col relative">
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                        <h3 className="lg:text-3xl text-lg font-semibold"> Deluxe King</h3>
+                    <div
+                      id="item2"
+                      className="carousel-item w-full flex-col relative"
+                    >
+                      <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                        <h3 className="lg:text-3xl text-lg font-semibold">
+                          {" "}
+                          Deluxe King
+                        </h3>
                       </div>
                       <div className="relative">
                         <img src={bed1} className="w-full" />
@@ -69,9 +77,14 @@ const Home = () => {
                         />
                       </div>
                     </div>
-                    <div id="item3" className="carousel-item w-full flex-col relative">
-                    <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                        <h3 className="lg:text-3xl text-lg font-semibold">Executive Suite</h3>
+                    <div
+                      id="item3"
+                      className="carousel-item w-full flex-col relative"
+                    >
+                      <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                        <h3 className="lg:text-3xl text-lg font-semibold">
+                          Executive Suite
+                        </h3>
                       </div>
                       <div className="relative">
                         <img src={bed2} className="w-full" />

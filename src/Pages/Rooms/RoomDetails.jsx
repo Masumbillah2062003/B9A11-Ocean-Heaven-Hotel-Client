@@ -19,7 +19,6 @@ const RoomDetails = () => {
   const { id } = useParams();
   const [dataLoader, setloaderData] = useState({});
 
-
   const {
     _id,
     images,
@@ -42,7 +41,6 @@ const RoomDetails = () => {
   const handleclose = () => {
     setShowModal(false);
   };
-
 
   const handleconfirm = (id) => {
     fetch(`http://localhost:5000/rooms/${id}`, {
@@ -172,7 +170,9 @@ const RoomDetails = () => {
                                   </div>
                                 </div>
                                 <div className="relative px-6 flex-auto">
-                                  <p className="text-2xl font-semibold">Price : {pricePerNight}/- par night</p>
+                                  <p className="text-2xl font-semibold">
+                                    Price : {pricePerNight}/- par night
+                                  </p>
                                   <p className="my-1 text-blueGray-500 text-lg leading-relaxed">
                                     {room_description}
                                   </p>

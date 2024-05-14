@@ -21,7 +21,6 @@ const Room = () => {
     Aos.init();
   }, []);
 
-
   const handleMinPrice = (e) => {
     setMinPrice(e.target.value);
   };
