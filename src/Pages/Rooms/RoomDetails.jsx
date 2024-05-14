@@ -15,12 +15,10 @@ const RoomDetails = () => {
   const [allData, setAllData] = useState(data);
   const location = useLocation();
   console.log(location);
-  const [ratingLength, setRatingLength] = useState([])
 
   const { id } = useParams();
   const [dataLoader, setloaderData] = useState({});
 
-  console.log(ratingLength);
 
   const {
     _id,
@@ -45,55 +43,8 @@ const RoomDetails = () => {
     setShowModal(false);
   };
 
-  useEffect(() => {
-    const x = rating.filter(r => r.id == _id)
-    setRatingLength(x)
-  },[_id, rating])
 
-  const handleconfirm = (id) => {
-    fetch(`http://localhost:5000/rooms/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "Unavailable" }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount > 0) {
-          const updated = allData.find((b) => b._id === id);
-          updated.status = "Unavailable";
-          const newBookings = [updated];
-          setAllData(newBookings);
-        }
-      });
 
-    fetch("http://localhost:5000/bookings", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        room_name,
-        id: _id,
-        startDate,
-        email: user.email,
-        images,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          Swal.fire({
-            icon: "success",
-            title: "Your booking Successfull",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-    setShowModal(false);
-  };
 
   useEffect(() => {
     fetch("http://localhost:5000/review")
