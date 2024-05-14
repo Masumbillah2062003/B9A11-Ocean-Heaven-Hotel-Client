@@ -15,11 +15,12 @@ const RoomDetails = () => {
   const [allData, setAllData] = useState(data);
   const location = useLocation();
   console.log(location);
+  const [ratingLength, setRatingLength] = useState([])
 
   const { id } = useParams();
   const [dataLoader, setloaderData] = useState({});
 
-  console.log(rating);
+  console.log(ratingLength);
 
   const {
     _id,
@@ -43,6 +44,11 @@ const RoomDetails = () => {
   const handleclose = () => {
     setShowModal(false);
   };
+
+  useEffect(() => {
+    const x = rating.filter(r => r.id == _id)
+    setRatingLength(x)
+  },[_id, rating])
 
   const handleconfirm = (id) => {
     fetch(`http://localhost:5000/rooms/${id}`, {

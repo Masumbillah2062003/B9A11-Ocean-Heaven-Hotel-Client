@@ -67,16 +67,6 @@ const Navbar = () => {
       >
         About Us
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "text-[#FA4612] lg:border-b-2 underline-offset-2 border-[#FA4612] text-lg font-semibold"
-            : "font-semibold text-lg"
-        }
-        to="/contactus"
-      >
-        Contact Us
-      </NavLink>
     </>
   );
   const handlerLogout = () => {

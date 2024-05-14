@@ -3,7 +3,6 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home/Home";
 import Room from "../Pages/Rooms/Room";
 import AboutUs from "../Pages/AboutUs/AboutUs";
-import ContactUs from "../Pages/ContactUs/ContactUs";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import PrivateRoute from "./PrivateRoute";
@@ -42,10 +41,6 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <AboutUs></AboutUs>,
-      },
-      {
-        path: "/contactus",
-        element: <ContactUs></ContactUs>,
       },
       {
         path: "/signin",

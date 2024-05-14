@@ -80,7 +80,10 @@ const Room = () => {
             key={room._id}
             className="overflow-hidden rounded-md "
           >
-            <Link to={`/roomDetails/${room._id}`} className="relative w-full h-full ">
+            <Link
+              to={`/roomDetails/${room._id}`}
+              className="relative w-full h-full "
+            >
               <figure>
                 <img
                   src={room.images}
@@ -93,7 +96,9 @@ const Room = () => {
               </figure>
               <div className="bg-[#FA4612] p-5 text-white">
                 <h1 className="text-xl font-bold">{room.room_name}</h1>
-                <h2 className="text-lg font-semibold">Price : {room.pricePerNight}/par night</h2>
+                <h2 className="text-lg font-semibold">
+                  Price : {room.pricePerNight}/-par night
+                </h2>
               </div>
             </Link>
           </div>

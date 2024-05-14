@@ -35,48 +35,43 @@ const MyBookings = () => {
 
   console.log(roomData);
 
-  const cancelBooking = (id, ids) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`http://localhost:5000/bookings/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount > 0) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-              });
-              const remaining = roomData.filter(
-                (booking) => booking._id !== id
-              );
-              setRoomData(remaining);
-            }
-          });
-      }
-    });
+  const cancelBooking = (id, ids, date) => {
+    console.log(new Date(date).getTime());
+    if (new Date(date).getTime() > new Date().getTime() + 86400000) {
+      fetch(`http://localhost:5000/bookings/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+            const remaining = roomData.filter((booking) => booking._id !== id);
+            setRoomData(remaining);
+          }
+        });
 
-    fetch(`http://localhost:5000/rooms/${ids}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "Available" }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      fetch(`http://localhost:5000/rooms/${ids}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ status: "Available" }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    } else {
+      Swal.fire({
+        title: "Error!",
+        text: "Your booking will not be cencel",
+        icon: "error",
       });
+    }
   };
   const handleUpdate = (id) => {
     fetch(`http://localhost:5000/bookings/${id}`, {
@@ -98,7 +93,7 @@ const MyBookings = () => {
           setRoomData(newBookings);
           Swal.fire({
             title: "Update Date!",
-            text: "Your file has been deleted.",
+            text: "Your date has been Updated.",
             icon: "success",
           });
         }
@@ -227,7 +222,9 @@ const MyBookings = () => {
                 <th>
                   <button
                     className="btn bg-black hover:bg-transparent border-2 border-red-500 hover:border-red-500 text-white hover:text-red-500"
-                    onClick={() => cancelBooking(room._id, room.id)}
+                    onClick={() =>
+                      cancelBooking(room._id, room.id, room.startDate)
+                    }
                   >
                     Cancel
                   </button>
