@@ -2,9 +2,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 
 const NewLetter = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
+ 
   return (
     <div data-aos-duration="1000"
     data-aos-easing="ease-in-out" data-aos="zoom-in" className="bg-[#fa441218] p-7 lg:mt-20 mt-8">
