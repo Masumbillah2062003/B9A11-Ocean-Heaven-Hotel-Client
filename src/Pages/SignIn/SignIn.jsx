@@ -1,11 +1,13 @@
-import { useContext } from "react";
+// import { useContext } from "react";
+// import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+import useAuth from "../../hook/useAuth";
 
 const SignIn = () => {
-    const { signIn, loading, google } = useContext(AuthContext);
+    // const { signIn, loading, google } = useContext(AuthContext);
+    const { signIn, loading, google } = useAuth();
   const location = useLocation();
   console.log(location);
   const navigate = useNavigate();

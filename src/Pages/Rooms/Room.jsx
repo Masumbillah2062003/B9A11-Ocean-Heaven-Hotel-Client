@@ -1,4 +1,5 @@
-import { useState } from "react";
+import Aos from "aos";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Room = () => {
@@ -16,7 +17,10 @@ const Room = () => {
     );
   };
 
-  console.log(newData);
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
 
   const handleMinPrice = (e) => {
     setMinPrice(e.target.value);
@@ -28,7 +32,12 @@ const Room = () => {
 
   return (
     <div className="p-4 lg:p-0">
-      <h1 className="lg:text-5xl text-3xl lg:mt-12  font-bold text-[#FA4612] text-center">
+      <h1
+        data-aos="flip-down"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="lg:text-5xl text-3xl lg:mt-12  font-bold text-[#FA4612] text-center"
+      >
         All Room
       </h1>
       <div className=" mt-10">
@@ -64,13 +73,28 @@ const Room = () => {
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
         {newData.map((room) => (
-          <div key={room._id} className="overflow-hidden rounded-md shadow-lg shadow-[#FA4612]">
-            <Link to={`/roomDetails/${room._id}`}>
-              <img
-                src={room.images}
-                alt=""
-                className="w-full h-full  hover:scale-110 duration-300 rounded-md"
-              />
+          <div
+            data-aos="flip-down"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            key={room._id}
+            className="overflow-hidden rounded-md "
+          >
+            <Link to={`/roomDetails/${room._id}`} className="relative w-full h-full ">
+              <figure>
+                <img
+                  src={room.images}
+                  alt=""
+                  className="w-full h-[250px]  hover:scale-110 duration-300 rounded-md "
+                />
+                <h2 className="absolute text-3xl top-0 bg-[#FA4612] px-3 py-2 font-semibold text-white">
+                  {room.status}
+                </h2>
+              </figure>
+              <div className="bg-[#FA4612] p-5 text-white">
+                <h1 className="text-xl font-bold">{room.room_name}</h1>
+                <h2 className="text-lg font-semibold">Price : {room.pricePerNight}/par night</h2>
+              </div>
             </Link>
           </div>
         ))}

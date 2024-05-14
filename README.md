@@ -1,8 +1,29 @@
-# React + Vite
+# assignment_category_0004
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Website name 
+Welcome to My Website! My website name is Ocean Heaven Hotel
 
-Currently, two official plugins are available:
+## Live Site URL
+[]()
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Features and Characteristics
+
+- **Responsive Design:** my website is fully responsive
+  
+- **React JS:** I built my website entirely with React
+  
+- **Internet:** My website will show output with internet
+  
+- **MongoDB:** Mongodb is used in the website
+
+- **Firebase:** Firebase is used for logging in and logging out of the website
+  
+- **Features Added :** On the website we have the price per night for each bed in the hotel and by clicking on the bed title and bed picture you will see full details including bed reviews.
+
+
+## Added implementation packages
+
+- **a.** AOS Package,
+- **c.** React-leaflet,
+- **e.** Swiper slider

@@ -10,19 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.36.0",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^1.6.8",
+    "axios-hooks": "^5.0.2",
     "firebase": "^10.11.1",
+    "leaflet": "^1.9.4",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
+    "react": "^18.3.1",
     "react-datepicker": "^6.9.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.51.4",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.2.1",
+    "react-leaflet": "^4.2.1",
     "react-modal": "^3.16.1",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.23.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.11.0",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

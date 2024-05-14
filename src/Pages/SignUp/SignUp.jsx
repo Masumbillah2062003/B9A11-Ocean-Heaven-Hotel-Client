@@ -1,12 +1,11 @@
 import { updateProfile } from "firebase/auth";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProvider";
+import useAuth from "../../hook/useAuth";
 
 const SignUp = () => {
-    const { createSignUp, loading } = useContext(AuthContext);
+  const { createSignUp, loading } = useAuth();
 
   const {
     register,
@@ -18,20 +17,24 @@ const SignUp = () => {
     const { name, email, photo, password } = data;
     console.log(name, photo, email, password);
 
-
-    if(password.length < 6){
-        console.log('password least 6 chraacter or longer')
-        return toast.error("password least 6 chraacter or longer")
+    if (password.length < 6) {
+      console.log("password least 6 chraacter or longer");
+      return toast.error("password least 6 chraacter or longer");
+    } else if (!/[A-Z]/.test(password)) {
+      console.log(
+        "your password should have at least one upper case characters [[A-Z]]"
+      );
+      return toast.error(
+        "your password should have at least one upper case characters [[A-Z]]"
+      );
+    } else if (!/[a-z]/.test(password)) {
+      console.log(
+        "your password should have at least one upper case characters [[a-z]]"
+      );
+      return toast.error(
+        "your password should have at least one upper case characters [[a-z]]"
+      );
     }
-    else if(!/[A-Z]/.test(password)){
-        console.log('your password should have at least one upper case characters [[A-Z]]')
-        return toast.error("your password should have at least one upper case characters [[A-Z]]")
-    }
-    else if(!/[a-z]/.test(password)){
-        console.log('your password should have at least one upper case characters [[a-z]]')
-        return toast.error("your password should have at least one upper case characters [[a-z]]")
-    }
-
 
     createSignUp(email, password)
       .then((result) => {
@@ -40,14 +43,13 @@ const SignUp = () => {
           displayName: name,
           photoURL: photo,
         });
-        return toast.success("your register successfull")
+        return toast.success("your register successfull");
       })
       .catch((error) => {
         console.error(error);
-        return toast.error(error.message)
+        return toast.error(error.message);
       });
   };
-
 
   if (loading) {
     return (
@@ -60,7 +62,7 @@ const SignUp = () => {
         </h1>
       </div>
     );
-  } 
+  }
   return (
     <div className="h-auto py-10 flex items-center justify-center px-3 bg-[#f5f4f4] shadow-inner">
       <div className="w-[550px] bg-[#fa441218] shadow-xl rounded-lg lg:px-10 px-3 py-8">
