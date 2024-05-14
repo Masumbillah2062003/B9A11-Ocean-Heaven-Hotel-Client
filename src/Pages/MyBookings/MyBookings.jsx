@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
 import Aos from "aos";
+import axios from "axios";
 
 // import { useLoaderData } from "react-router-dom";
 
@@ -15,30 +16,34 @@ const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [id, setId] = useState();
   const [data, setData] = useState({});
-  console.log(data);
+  // console.log(data);
 
-  const url = `http://localhost:5000/bookings?email=${user.email}`;
+  const url = `https://b9a11-assignment-server-site.vercel.app/bookings?email=${user.email}`;
 
   useEffect(() => {
     if (user?.email) {
-      // fetch(`http://localhost:5000/bookings/${user.email}`)
-      // fetch(`http://localhost:5000/bookings?email=${user.email}`, {
-      fetch(url, {
-        credentials: "include",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setRoomData(data);
-        });
+      axios.get(url, { withCredentials: true }).then((res) => {
+        setRoomData(res.data);
+      });
+
+      // fetch(`https://b9a11-assignment-server-site.vercel.app/bookings/${user.email}`)
+      // fetch(`https://b9a11-assignment-server-site.vercel.app/bookings?email=${user.email}`, {
+      // fetch(url, {
+      //   credentials: "include",
+      // })
+      //   .then((res) => res.json())
+      //   .then((data) => {
+      //     setRoomData(data);
+      //   });
     }
   }, [url, user?.email]);
 
-  console.log(roomData);
+  // console.log(roomData);
 
   const cancelBooking = (id, ids, date) => {
-    console.log(new Date(date).getTime());
+    // console.log(new Date(date).getTime());
     if (new Date(date).getTime() > new Date().getTime() + 86400000) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`https://b9a11-assignment-server-site.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -54,7 +59,7 @@ const MyBookings = () => {
           }
         });
 
-      fetch(`http://localhost:5000/rooms/${ids}`, {
+      fetch(`https://b9a11-assignment-server-site.vercel.app/rooms/${ids}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -62,8 +67,8 @@ const MyBookings = () => {
         body: JSON.stringify({ status: "Available" }),
       })
         .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
+        .then(() => {
+          // console.log(data);
         });
     } else {
       Swal.fire({
@@ -74,7 +79,7 @@ const MyBookings = () => {
     }
   };
   const handleUpdate = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://b9a11-assignment-server-site.vercel.app/bookings/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -83,7 +88,7 @@ const MyBookings = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           // update state
           const remaining = roomData.filter((b) => b._id !== id);
@@ -109,7 +114,7 @@ const MyBookings = () => {
     setShowModal(false);
   };
 
-  console.log(id);
+  // console.log(id);
   const handleRatingSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -120,7 +125,7 @@ const MyBookings = () => {
     const newdate = new Date(date).toLocaleString();
     const review = { name, rating, newdate, comment, id };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://b9a11-assignment-server-site.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -128,8 +133,8 @@ const MyBookings = () => {
       body: JSON.stringify(review),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        // console.log(data);
       });
 
     setReviewModal(false);

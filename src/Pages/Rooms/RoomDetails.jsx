@@ -14,7 +14,7 @@ const RoomDetails = () => {
   const data = useLoaderData();
   const [allData, setAllData] = useState(data);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   const { id } = useParams();
   const [dataLoader, setloaderData] = useState({});
@@ -43,7 +43,7 @@ const RoomDetails = () => {
   };
 
   const handleconfirm = (id) => {
-    fetch(`http://localhost:5000/rooms/${id}`, {
+    fetch(`https://b9a11-assignment-server-site.vercel.app/rooms/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ const RoomDetails = () => {
         }
       });
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://b9a11-assignment-server-site.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -88,7 +88,7 @@ const RoomDetails = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://b9a11-assignment-server-site.vercel.app/review")
       .then((res) => res.json())
       .then((data) => {
         setRating(data);

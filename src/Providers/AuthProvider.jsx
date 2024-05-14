@@ -43,20 +43,20 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
+          .post("https://b9a11-assignment-server-site.vercel.app/jwt", loggedUser, {
             withCredentials: true,
           })
-          .then((res) => {
-            console.log("token res", res.data);
-          });
+          // .then((res) => {
+          //   console.log("token res", res.data);
+          // });
       } else {
         axios
-          .post("http://localhost:5000/logout", loggedUser, {
+          .post("https://b9a11-assignment-server-site.vercel.app/logout", loggedUser, {
             withCredentials: true,
           })
-          .then((res) => {
-            console.log(res.data);
-          });
+          // .then((res) => {
+          //   console.log(res.data);
+          // });
       }
     });
     return () => {

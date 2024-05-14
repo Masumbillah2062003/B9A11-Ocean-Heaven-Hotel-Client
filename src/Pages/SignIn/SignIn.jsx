@@ -9,7 +9,7 @@ const SignIn = () => {
   // const { signIn, loading, google } = useContext(AuthContext);
   const { signIn, loading, google } = useAuth();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const navigate = useNavigate();
 
   const {
@@ -22,25 +22,25 @@ const SignIn = () => {
     const { email, password } = data;
 
     signIn(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        // console.log(result.user);
         navigate(location.state ? location.state : "/");
         return toast.success("your login successfull");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      // .catch((error) => {
+      //   console.log(error);
+      // });
   };
 
   const handleGoogle = () => {
     google()
-      .then((result) => {
-        console.log(result);
+      .then(() => {
+        // console.log(result);
         navigate(location?.state ? location.state : "/");
         return toast.success("google log in successfull");
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
+        // console.error(error);
         return toast.error("google log in failed");
       });
   };

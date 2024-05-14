@@ -15,22 +15,22 @@ const SignUp = () => {
 
   const handleRegister = (data) => {
     const { name, email, photo, password } = data;
-    console.log(name, photo, email, password);
+    // console.log(name, photo, email, password);
 
     if (password.length < 6) {
-      console.log("password least 6 chraacter or longer");
+      // console.log("password least 6 chraacter or longer");
       return toast.error("password least 6 chraacter or longer");
     } else if (!/[A-Z]/.test(password)) {
-      console.log(
-        "your password should have at least one upper case characters [[A-Z]]"
-      );
+      // console.log(
+      //   "your password should have at least one upper case characters [[A-Z]]"
+      // );
       return toast.error(
         "your password should have at least one upper case characters [[A-Z]]"
       );
     } else if (!/[a-z]/.test(password)) {
-      console.log(
-        "your password should have at least one upper case characters [[a-z]]"
-      );
+      // console.log(
+      //   "your password should have at least one upper case characters [[a-z]]"
+      // );
       return toast.error(
         "your password should have at least one upper case characters [[a-z]]"
       );
@@ -38,7 +38,7 @@ const SignUp = () => {
 
     createSignUp(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         updateProfile(result.user, {
           displayName: name,
           photoURL: photo,

@@ -23,12 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/rooms",
         element: <Room></Room>,
-        loader: () => fetch("http://localhost:5000/rooms"),
+        loader: () => fetch("https://b9a11-assignment-server-site.vercel.app/rooms"),
       },
       {
         path: "/roomDetails/:id",
         element: <RoomDetails></RoomDetails>,
-        loader: () => fetch("http://localhost:5000/rooms"),
+        loader: () => fetch("https://b9a11-assignment-server-site.vercel.app/rooms"),
       },
       {
         path: "/mybookings",
