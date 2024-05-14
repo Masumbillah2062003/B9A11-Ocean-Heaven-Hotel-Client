@@ -14,39 +14,7 @@ import room3 from "../../assets/images/room3.jpg";
 
 const Banner = () => {
   return (
-    <div>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        loop={true}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <figure>
-            <img src={room1} alt="" className="w-full h-full"/>
-          </figure>
-        </SwiperSlide>
-        <SwiperSlide >
-          <figure >
-            <img src={room2} alt="" className="w-full h-full"/>
-          </figure>
-        </SwiperSlide>
-        <SwiperSlide>
-          <figure>
-            <img src={room3} alt="" className="w-full h-full"/>
-          </figure>
-        </SwiperSlide>
-      </Swiper>
-    </div>
+    
   );
 };
 
