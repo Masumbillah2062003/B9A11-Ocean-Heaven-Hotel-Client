@@ -7,7 +7,9 @@ const Map = () => {
   const mapRef = useRef();
   return (
     <div>
-      
+      <h2 className="lg:text-5xl text-3xl mt-6 lg:mt-16  font-bold text-[#FA4612] text-center">
+        Map
+      </h2>
       <div className="w-full  mt-20 relative -z-10 lg:-z-0">
         <MapContainer
           center={position}
