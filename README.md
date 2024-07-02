@@ -1,5 +1,7 @@
 ## Overview
- website name is Ocean Heaven Hotel
+ website name is Ocean Heaven Hotel.
+
+ Ocean Haven Hotel is if someone wants to book a room to stay in the hotel then he can book by looking at the available rooms
 
 ## Features and Characteristics
 
