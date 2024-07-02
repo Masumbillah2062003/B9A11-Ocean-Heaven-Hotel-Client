@@ -1,29 +1,27 @@
-# assignment_category_0004
-
-# Website name 
-Welcome to My Website! My website name is Ocean Heaven Hotel
-
-## Live Site URL
-[https://b9a11-assignment.web.app/](https://b9a11-assignment.web.app/)
-
+## Overview
+ website name is Ocean Heaven Hotel
 
 ## Features and Characteristics
 
-- **Responsive Design:** my website is fully responsive
-  
-- **React JS:** I built my website entirely with React
-  
-- **Internet:** My website will show output with internet
-  
-- **MongoDB:** Mongodb is used in the website
+- **Firebase Authentication:** If someone wants to book a room then he has to login first then he can see the booking section
 
-- **Firebase:** Firebase is used for logging in and logging out of the website
-  
-- **Features Added :** On the website we have the price per night for each bed in the hotel and by clicking on the bed title and bed picture you will see full details including bed reviews.
+- **Booking Update & Delete:** If someone books a room then if he needs to update the date then he can update the date but he has to update one day before the booked date and he can delete the booked room if he wants.
+
+- **Review:** The person who booked the room can review the room but no one else can review the room except the person who booked the room. 
+
+## Use Technologes 
+
+  - **React JS**
+  - **Tailwind CSS** 
+  - **Firebase**
+  - **Node JS**
+  - **Express JS**
+  - **MongoDB**
 
 
-## Added implementation packages
-
-- **a.** AOS Package,
-- **c.** React-leaflet,
-- **e.** Swiper slider
+  ## Project Clone 
+  - **git clone [repository URL]** 
+  - **cd [project directory]** 
+  - **npm install** 
+  - **Firebase key added .env file** 
+  - **npm run dev** 
